@@ -1,6 +1,6 @@
 # 515project
 https://www.sfu.ca/~ssurjano/goldpr.html
-Breakdown of tasks:
+summarized breakdown of tasks:
 
     Data Visualization
     1a - Make dense heatmap of the function over certain domain
