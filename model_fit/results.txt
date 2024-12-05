@@ -1,0 +1,17 @@
+SVM GP first pass:
+Name : GP regression
+Objective : 233.36779395488568
+Number of Parameters : 4
+Number of Optimization Parameters : 3
+Updates : True
+Parameters:
+  [1mGP_regression.         [0;0m  |                value  |  constraints  |  priors
+  [1mconstmap.C             [0;0m  |   424.86458528219964  |               |        
+  [1mrbf.variance           [0;0m  |   138745.34191929217  |      +ve      |        
+  [1mrbf.lengthscale        [0;0m  |  0.29030906047729227  |      +ve      |        
+  [1mGaussian_noise.variance[0;0m  |                1e-06  |   +ve fixed   |        
+-233.36779395488568
+BIC: 477.1327956181706
+
+LDA: base kernel search - 679 -all performed about the same: maybe edit the data with a transformation?
+LDA: composition search - 680 (same as base kernel search)
