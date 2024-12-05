@@ -13,9 +13,10 @@ x = np.linspace(-2, 2, 1000)
 y = np.linspace(-2, 2, 1000)
 X, Y = np.meshgrid(x,y)
 Z = fxn(X, Y)
+Z_comp = [Z, np.log10(Z), np.sqrt(Z), np.square(Z)]
 
-plt.figure(figsize=(20, 16))
-plt.imshow(Z, cmap='jet', aspect='auto')  # 'auto' aspect maintains the correct proportions
+plt.figure(figsize=(10, 8))
+plt.imshow(Z_comp[1], cmap='jet', aspect='auto')  # 'auto' aspect maintains the correct proportions
 plt.colorbar()
 
 # Set ticks and labels (similar to seaborn's xticklabels/yticklabels)
