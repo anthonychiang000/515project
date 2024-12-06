@@ -11,13 +11,15 @@ def fxn(x, y):
 
 x = np.linspace(-2, 2, 1000)
 y = np.linspace(-2, 2, 1000)
-X, Y = np.meshgrid(x,y)
-Z = fxn(X, Y)
+X1, X2 = np.meshgrid(x, y)
+X_grid = np.vstack((X1.ravel(), X2.ravel())).T
+Z = fxn(X1, X2)
 Z_comp = [Z, np.log10(Z), np.sqrt(Z), np.square(Z)]
-
 plt.figure(figsize=(10, 8))
 plt.imshow(Z_comp[1], cmap='jet', aspect='auto')  # 'auto' aspect maintains the correct proportions
 plt.colorbar()
+plt.gca().invert_yaxis()
+
 
 # Set ticks and labels (similar to seaborn's xticklabels/yticklabels)
 num_ticks = 11

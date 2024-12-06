@@ -1,17 +1,57 @@
-SVM GP first pass:
+Goldstein no log: 850 (matern52 sum)
+Goldstein with log: 126 : RBF and periodic const
+
+126.9428750024608
+
 Name : GP regression
-Objective : 233.36779395488568
-Number of Parameters : 4
-Number of Optimization Parameters : 3
+Objective : 53.07422979283122
+Number of Parameters : 7
+Number of Optimization Parameters : 6
 Updates : True
 Parameters:
-  [1mGP_regression.         [0;0m  |                value  |  constraints  |  priors
-  [1mconstmap.C             [0;0m  |   424.86458528219964  |               |        
-  [1mrbf.variance           [0;0m  |   138745.34191929217  |      +ve      |        
-  [1mrbf.lengthscale        [0;0m  |  0.29030906047729227  |      +ve      |        
-  [1mGaussian_noise.variance[0;0m  |                1e-06  |   +ve fixed   |        
--233.36779395488568
-BIC: 477.1327956181706
+  GP_regression.                |               value  |  constraints  |  priors
+  constmap.C                    |   10.48229320811063  |               |        
+  sum.rbf.variance              |   5.230146790536397  |      +ve      |        
+  sum.rbf.lengthscale           |  1.1365826079272208  |      +ve      |        
+  sum.std_periodic.variance     |   1.541738827963953  |      +ve      |        
+  sum.std_periodic.period       |  0.9772293595077811  |      +ve      |        
+  sum.std_periodic.lengthscale  |  0.2854989639857783  |      +ve      |        
+  Gaussian_noise.variance       |               1e-06  |   +ve fixed   |        
 
-LDA: base kernel search - 679 -all performed about the same: maybe edit the data with a transformation?
-LDA: composition search - 680 (same as base kernel search)
+Goldstein with log multiplier: RBF exp const 136
+Goldstein no log mult: 778 Matern52 RBF const
+Goldstein log mult and add: 132.6294844049542
+
+Name : GP regression
+Objective : 52.451798591278205
+Number of Parameters : 9
+Number of Optimization Parameters : 8
+Updates : True
+Parameters:
+  [1mGP_regression.                 [0;0m  |               value  |  constraints  |  priors
+  [1mconstmap.C                     [0;0m  |  10.717104091826112  |               |        
+  [1msum.mul.rbf.variance           [0;0m  |  15.898397112153846  |      +ve      |        
+  [1msum.mul.rbf.lengthscale        [0;0m  |  1.3271100650327916  |      +ve      |        
+  [1msum.mul.Exponential.variance   [0;0m  |  0.3814697882567306  |      +ve      |        
+  [1msum.mul.Exponential.lengthscale[0;0m  |   61.21335632680824  |      +ve      |        
+  [1msum.std_periodic.variance      [0;0m  |  1.4067910890819981  |      +ve      |        
+  [1msum.std_periodic.period        [0;0m  |  0.9749813996582115  |      +ve      |        
+  [1msum.std_periodic.lengthscale   [0;0m  |  0.3136205890055054  |      +ve      |        
+  [1mGaussian_noise.variance        [0;0m  |               1e-06  |   +ve fixed   |        
+
+  Goldstein log10 additive: 73.19605043610159
+
+Name : GP regression
+Objective : 26.200817509651614
+Number of Parameters : 7
+Number of Optimization Parameters : 6
+Updates : True
+Parameters:
+  GP_regression.                |                value  |  constraints  |  priors
+  constmap.C                    |    4.631201805490912  |               |        
+  sum.std_periodic.variance     |  0.27503982068052324  |      +ve      |        
+  sum.std_periodic.period       |   0.3389048565799144  |      +ve      |        
+  sum.std_periodic.lengthscale  |  0.39405863234400174  |      +ve      |        
+  sum.rbf.variance              |   1.1217849563931235  |      +ve      |        
+  sum.rbf.lengthscale           |    1.317888806548943  |      +ve      |        
+  Gaussian_noise.variance       |                1e-06  |   +ve fixed   |        

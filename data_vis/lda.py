@@ -1,29 +1,36 @@
-import pandas as pd
 import numpy as np
-from sklearn.neighbors import KernelDensity
 import matplotlib.pyplot as plt
+from scipy.stats import gaussian_kde
 
 # Load the CSV without headers
 data = np.loadtxt('lda.csv', delimiter=",")
 
 # Extract all data points from the fourth column (column index 3)
 data2 = np.log(data)
-data_points = data2[:, 3].reshape(-1, 1)
+data_points = data2[:, -1]
+print(data_points.shape)
+kde = gaussian_kde(data_points)
 
-# Create and fit the Kernel Density Estimate
-kde = KernelDensity(kernel='gaussian', bandwidth=10).fit(data_points)
+x_min = data_points.min() - 1  
+x_max = data_points.max() + 1
+x_grid = np.linspace(x_min, x_max, 1000) 
 
-# Generate points for evaluation
-x_range = np.linspace(np.min(data_points), np.max(data_points), 5000).reshape(-1, 1)
+# 4. Evaluate the KDE on the grid
+kde_values = kde(x_grid)
 
-# Calculate log density and convert to density
-log_dens = kde.score_samples(x_range)
-density = np.exp(log_dens)
+# 5. Visualization
+plt.figure(figsize=(8, 6))
 
 # Plot the KDE
-plt.figure(figsize=(20, 16))
-plt.plot(x_range, density)
-plt.title("Kernel Density Estimate of LDA")
-plt.xlabel("Values")
-plt.ylabel("Density")
+plt.plot(x_grid, kde_values, label='KDE', color='blue', linewidth=2)
+plt.title('Kernel Density Estimation')
+plt.xlabel('Data Values')
+plt.ylabel('Density')
+plt.legend()
+
+# Customize the plot (optional)
+plt.grid(True, linestyle=':', alpha=0.6)  # Add a grid
+plt.xlim([x_min, x_max])
+
+# Show the plot
 plt.show()
