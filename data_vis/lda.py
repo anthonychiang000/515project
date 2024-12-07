@@ -22,9 +22,9 @@ kde_values = kde(x_grid)
 plt.figure(figsize=(8, 6))
 
 # Plot the KDE
-plt.plot(x_grid, kde_values, label='KDE', color='blue', linewidth=2)
-plt.title('Kernel Density Estimation')
-plt.xlabel('Data Values')
+plt.plot(x_grid, kde_values, color='blue', linewidth=2)
+plt.title('Kernel Density Estimation of LDA (log transformation)')
+plt.xlabel('Output Values')
 plt.ylabel('Density')
 plt.legend()
 

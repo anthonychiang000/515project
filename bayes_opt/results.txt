@@ -1,0 +1,2 @@
+EI for GP: 0.8419138513706874
+Random search: 0.45

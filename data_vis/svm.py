@@ -7,7 +7,7 @@ data = np.loadtxt('svm.csv', delimiter=",")
 
 # Extract all data points from the fourth column (column index 3)
 data2 = np.log(data)
-data_points = data[:, -1]
+data_points = data2[:, -1]
 kde = gaussian_kde(data_points)
 
 x_min = data_points.min() - 1  
@@ -21,8 +21,8 @@ kde_values = kde(x_grid)
 plt.figure(figsize=(8, 6))
 
 # Plot the KDE
-plt.plot(x_grid, kde_values, label='KDE', color='blue', linewidth=2)
-plt.title('Kernel Density Estimation')
+plt.plot(x_grid, kde_values, color='blue', linewidth=2)
+plt.title('Kernel Density Estimation of SVM (log transformation)')
 plt.xlabel('Data Values')
 plt.ylabel('Density')
 plt.legend()

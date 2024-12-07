@@ -55,3 +55,9 @@ Parameters:
   sum.rbf.variance              |   1.1217849563931235  |      +ve      |        
   sum.rbf.lengthscale           |    1.317888806548943  |      +ve      |        
   Gaussian_noise.variance       |                1e-06  |   +ve fixed   |        
+
+  LDA base kernel: std periodic at -16
+  LDA kernel:  mat32 periodic sum, const -8
+  LDA : periodic and ratquad mult
+
+  SVM: Mat52

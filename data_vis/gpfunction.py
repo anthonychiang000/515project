@@ -29,8 +29,8 @@ tick_labels = np.round(np.linspace(-2, 2, num_ticks, dtype=float), 1)
 plt.xticks(tick_values, tick_labels)
 plt.yticks(tick_values, tick_labels)
 
-plt.xlabel("X Variable")  # Add labels for clarity
-plt.ylabel("Y Variable")
-plt.title("Heatmap of fxn(x, y)") 
+plt.xlabel("X")  # Add labels for clarity
+plt.ylabel("Y")
+plt.title("Heatmap of Goldstein-Price Function (log base 10 Transformation)") 
 plt.tight_layout()  # Adjust layout for better spacing
 plt.show()
